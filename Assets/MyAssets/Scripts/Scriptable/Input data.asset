@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7707f0c2d0e35b46bbcd4586ba5ffac, type: 3}
+  m_Name: Input data
+  m_EditorClassIdentifier: Assembly-CSharp::InputData
+  isEditing: 0
+  inAction: 0
+  isCrouching: 0
+  isAiming: 0
+  isJumping: 0
+  jumpDuration: 1.5
+  isKicking: 0
+  kickDuration: 1.75
+  isPunching: 0
+  punchDuration: 0.8
+  healDuration: 1.7

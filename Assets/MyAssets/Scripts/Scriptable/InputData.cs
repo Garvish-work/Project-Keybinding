@@ -1,0 +1,27 @@
+using UnityEngine;
+
+[CreateAssetMenu (fileName = "Input data", menuName = "Scriptable/Input data")]
+public class InputData : ScriptableObject
+{
+    public bool isEditing = false;
+    public bool inAction = false;
+
+    public bool isCrouching = false;
+    public bool isAiming = false;
+
+    [Space]
+    public bool isJumping = false;
+    public float jumpDuration = 2f;
+
+    [Space]
+    public bool isKicking = false;
+    public float kickDuration = 2f;
+
+    [Space]
+    public bool isPunching = false;
+    public float punchDuration = 2f;
+
+    [Space]
+    public float healDuration = 1f;
+}
+
