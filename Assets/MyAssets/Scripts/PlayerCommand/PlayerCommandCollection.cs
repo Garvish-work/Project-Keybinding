@@ -108,7 +108,7 @@ public class PlayerRevive : PlayerCommand
         Debug.Log("Player in revived");
         if (inputData.isEditing) return;
 
+        if (!inputData.isDead) return;
         inputData.isDead = false;
-        
     }
 }

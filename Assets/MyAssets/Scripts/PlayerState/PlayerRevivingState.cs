@@ -12,7 +12,8 @@ public class PlayerRevivingState : PlayerBaseState
     {
         base.Enter();
         playerAnimationSystem.RevivePlayer();
-        
+
+        ActionHandler.OnPlayerRevive?.Invoke();
         inputData.isDead = false;
         
     }

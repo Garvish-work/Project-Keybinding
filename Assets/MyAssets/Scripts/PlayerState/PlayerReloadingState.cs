@@ -23,7 +23,7 @@ public class PlayerReloadingState : PlayerBaseState
         reloadTimer += Time.deltaTime;
         playerAnimationSystem.SetCrouchValue(inputData.isCrouching);
 
-        if (reloadTimer >= inputData.jumpDuration)
+        if (reloadTimer >= inputData.reloadDuration)
         {
             Exit();
             nextState = new PlayerAimState(inputData, playerAnimationSystem);

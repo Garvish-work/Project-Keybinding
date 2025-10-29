@@ -11,4 +11,5 @@ public static class ActionHandler
     public static Action<bool> OnPlayerEdit;    
     public static Action OnPlayerGetHit;
     public static Action OnPlayerDead;    
+    public static Action OnPlayerRevive;    
 }
