@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7707f0c2d0e35b46bbcd4586ba5ffac, type: 3}
   m_Name: Input data
   m_EditorClassIdentifier: Assembly-CSharp::InputData
+  isDead: 0
+  playerHealth: 3
+  playerMaxHealth: 3
   isEditing: 0
   inAction: 0
+  isCrouchableAction: 1
   isCrouching: 0
   isAiming: 0
   isJumping: 0
@@ -22,4 +26,7 @@ MonoBehaviour:
   kickDuration: 1.75
   isPunching: 0
   punchDuration: 0.8
+  isReloading: 0
+  reloadDuration: 2.7
   healDuration: 1.7
+  reviveDuration: 1

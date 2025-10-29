@@ -11,6 +11,7 @@ public class PlayerAimState : PlayerBaseState
     {
         base.Enter();
         playerAnimationSystem.AimWeapon(true);
+        inputData.isCrouchableAction = true;
     }
 
     public override void Update()
@@ -22,6 +23,17 @@ public class PlayerAimState : PlayerBaseState
             playerAnimationSystem.AimWeapon(false);
             nextState = new PlayerIdleState(inputData, playerAnimationSystem);
             Exit();
+        }
+        if (inputData.isReloading)
+        {
+            nextState = new PlayerReloadingState(inputData, playerAnimationSystem);
+            Exit();
+        }
+        if (inputData.isDead)
+        {
+            Exit();
+            playerAnimationSystem.AimWeapon(false);
+            nextState = new PlayerDeadState(inputData, playerAnimationSystem);
         }
     }
 
