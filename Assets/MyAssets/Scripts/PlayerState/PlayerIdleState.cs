@@ -10,6 +10,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
+        inputData.isCrouchableAction = true;
     }
 
     public override void Update()
@@ -48,6 +49,11 @@ public class PlayerIdleState : PlayerBaseState
         {
             Exit();
             nextState = new PlayerAimState(inputData, playerAnimationSystem);
+        }
+        if (inputData.isDead)
+        {
+            Exit();
+            nextState = new PlayerDeadState(inputData, playerAnimationSystem);
         }
     }
 

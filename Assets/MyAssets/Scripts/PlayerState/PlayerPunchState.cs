@@ -13,6 +13,7 @@ public class PlayerPunchState : PlayerBaseState
         base.Enter();
         punchTimer = 0;
         inputData.inAction = true;
+        inputData.isCrouchableAction = false;
 
         playerAnimationSystem.TriggerPunch();
     }
@@ -26,6 +27,11 @@ public class PlayerPunchState : PlayerBaseState
             Exit();
             nextState = new PlayerIdleState(inputData, playerAnimationSystem);
         }
+        if (inputData.isDead)
+        {
+            Exit();
+            nextState = new PlayerDeadState(inputData, playerAnimationSystem);
+        }
     }
 
     public override void Exit()
@@ -33,5 +39,6 @@ public class PlayerPunchState : PlayerBaseState
         base.Exit();
         inputData.inAction = false;
         inputData.isPunching = false;
+        inputData.isCrouchableAction = true;
     }
 }

@@ -3,8 +3,14 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "Input data", menuName = "Scriptable/Input data")]
 public class InputData : ScriptableObject
 {
+    public bool isDead = false;
+    public int playerHealth = 3;
+    public int playerMaxHealth = 3;
+
+    [Space]
     public bool isEditing = false;
     public bool inAction = false;
+    public bool isCrouchableAction = false;
 
     public bool isCrouching = false;
     public bool isAiming = false;
@@ -22,6 +28,13 @@ public class InputData : ScriptableObject
     public float punchDuration = 2f;
 
     [Space]
+    public bool isReloading = false;
+    public float reloadDuration = 1.5f;
+
+    [Space]
     public float healDuration = 1f;
+
+    [Space]
+    public float reviveDuration = 2f;
 }
 

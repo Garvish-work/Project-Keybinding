@@ -7,5 +7,17 @@ public class KeybindingData : ScriptableObject
     public Color editableButtonColor;
     public Color editableCrossColor;
     public Color nonEditableColor;
+
+    public MouseImages mouseImage;
+
     public Dictionary<PlayerCommand, KeyCode> keybinds = new Dictionary<PlayerCommand, KeyCode>();
+}
+
+
+[System.Serializable]
+public struct MouseImages
+{
+    public Sprite mouseLeft;
+    public Sprite mouseRight;
+    public Sprite mouseMiddle;
 }

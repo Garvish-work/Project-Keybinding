@@ -4,14 +4,13 @@ using UnityEngine.UI;
 
 public class KeybindIdentity : MonoBehaviour
 {
-
-
     [SerializeField] private KeybindingData keybindingData;    
     [SerializeField] private ActionToChange actionToChange;
     [SerializeField] private KeyCode defaultValue;
 
     [SerializeField] private Button clearButton;
-    [SerializeField] private Button editButton;
+    [SerializeField] private Image keyIcon;
+    private Button editButton;
 
     private TMP_Text keyText; 
     private string previousValue;
@@ -46,21 +45,24 @@ public class KeybindIdentity : MonoBehaviour
 
     private void ResetToDefault()
     {
-        keyText.text = defaultValue.ToString();
+        //keyText.text = defaultValue.ToString();
+        SetKeyText(defaultValue.ToString());
     }
 
 
     public void B_BindingPressed()
     {
         previousValue = keyText.text;
-        keyText.text = "Press any key";
+        //keyText.text = "Press any key";
+        SetKeyText("Press any key");
         isListening = true;
     }
 
     public void B_RemoveBinding()
     {
         ActionHandler.OnRemoveBindingCommand(actionToChange);
-        keyText.text = string.Empty;
+        //keyText.text = string.Empty;
+        SetKeyText(string.Empty);
     }
 
     private void Update()
@@ -76,7 +78,8 @@ public class KeybindIdentity : MonoBehaviour
                 {
                     if (keybindingData.keybinds.ContainsValue(keyPressed))
                     {
-                        keyText.text = previousValue;
+                        //keyText.text = previousValue;
+                        SetKeyText(previousValue);
                         isListening = false;
                         return;
                     }
@@ -84,10 +87,34 @@ public class KeybindIdentity : MonoBehaviour
                     ActionHandler.OnChangeCommand?.Invoke(keyPressed, actionToChange);
                     Debug.Log("Key pressed: " + keyPressed); 
 
-                    keyText.text = keyPressed.ToString();
+                    //keyText.text = keyPressed.ToString();
+                    SetKeyText(keyPressed.ToString());
                     isListening = false;
                 }
             }
         }
+    }
+
+    private void SetKeyText (string desireString)
+    {
+        keyIcon.gameObject.SetActive(true);
+        keyText.transform.localScale = Vector3.zero;
+        switch (desireString)
+        {
+            default:
+                keyIcon.gameObject.SetActive(false);
+                keyText.transform.localScale = Vector3.one;
+                break;
+            case "Mouse0":
+                keyIcon.sprite = keybindingData.mouseImage.mouseLeft;
+                break;
+            case "Mouse2":
+                keyIcon.sprite = keybindingData.mouseImage.mouseMiddle;
+                break;
+            case "Mouse1":
+                keyIcon.sprite = keybindingData.mouseImage.mouseRight;
+                break;
+        }
+        keyText.text = desireString;
     }
 }

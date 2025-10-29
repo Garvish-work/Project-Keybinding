@@ -12,6 +12,8 @@ public class InputSystem : MonoBehaviour
     PlayerCommand playerweaponAim = new PlayerWeaponAim();
     PlayerCommand playerHealCommand = new PlayerHeal();
     PlayerCommand playerEditCommand = new PlayerEdit();
+    PlayerCommand playerReloadCommand = new PlayerReload();
+    PlayerCommand playerRevivedCommand = new PlayerRevive();
 
     private void OnEnable()
     {
@@ -27,7 +29,7 @@ public class InputSystem : MonoBehaviour
 
     private void Start()
     {
-        DefaultValues();
+        B_ResetToDefaut();
     }
 
     private void DefaultValues()
@@ -39,6 +41,8 @@ public class InputSystem : MonoBehaviour
         ChangeBindings(KeyCode.Mouse1, ActionToChange.WEAPON_AIM);
         ChangeBindings(KeyCode.H, ActionToChange.PLAYER_HEAL);
         ChangeBindings(KeyCode.Escape, ActionToChange.EDITING);
+        ChangeBindings(KeyCode.R, ActionToChange.PLAYER_RELOADING);
+        ChangeBindings(KeyCode.V, ActionToChange.PLAYER_REVIVED);
     }
 
     private void Update()
@@ -77,6 +81,12 @@ public class InputSystem : MonoBehaviour
             case ActionToChange.EDITING:
                 keybindingData.keybinds[playerEditCommand] = keyTochange;
                 break;
+            case ActionToChange.PLAYER_RELOADING:
+                keybindingData.keybinds[playerReloadCommand] = keyTochange;
+                break;
+            case ActionToChange.PLAYER_REVIVED:
+                keybindingData.keybinds[playerRevivedCommand] = keyTochange;
+                break;
         }
     }
 
@@ -101,6 +111,9 @@ public class InputSystem : MonoBehaviour
                 break;
             case ActionToChange.PLAYER_HEAL:
                 keybindingData.keybinds.Remove(playerHealCommand);
+                break;
+            case ActionToChange.PLAYER_RELOADING:
+                keybindingData.keybinds.Remove(playerReloadCommand);
                 break;
         }
     }
