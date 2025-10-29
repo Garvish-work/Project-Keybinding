@@ -1,5 +1,5 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerAnimationSystem : MonoBehaviour
 {
@@ -21,11 +21,13 @@ public class PlayerAnimationSystem : MonoBehaviour
     {
         ActionHandler.OnWeaponFire += WeaponFire;
         ActionHandler.OnPlayerHeal += TriggerHeal;
+        ActionHandler.OnPlayerGetHit += TriggerGetHit;
     }
     private void OnDisable()
     {
         ActionHandler.OnWeaponFire -= WeaponFire;
         ActionHandler.OnPlayerHeal -= TriggerHeal;
+        ActionHandler.OnPlayerGetHit -= TriggerGetHit;
     }
     private void WeaponFire()
     {
@@ -51,12 +53,27 @@ public class PlayerAnimationSystem : MonoBehaviour
         inputData.inAction = false;
         healthBoxHolder.SetActive(false);
     }
+    private void TriggerGetHit()
+    {
+        int randomIndex = Random.Range(0, 3);
+        playerAnime.SetTrigger("GetHit");
+        playerAnime.SetInteger("HitIndex", randomIndex);
+    }
     #endregion
 
 
     public void SetCrouchValue(bool value)
     {
         playerAnime.SetBool("isCrouching", value);
+    }
+
+    public void MakePlayerDead()
+    {
+        playerAnime.SetTrigger("isDead");
+    }
+    public void RevivePlayer()
+    {
+        playerAnime.SetTrigger("isRevived");
     }
 
     public void TriggerJump()

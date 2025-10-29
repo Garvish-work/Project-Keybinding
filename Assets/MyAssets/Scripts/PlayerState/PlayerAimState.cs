@@ -29,6 +29,12 @@ public class PlayerAimState : PlayerBaseState
             nextState = new PlayerReloadingState(inputData, playerAnimationSystem);
             Exit();
         }
+        if (inputData.isDead)
+        {
+            Exit();
+            playerAnimationSystem.AimWeapon(false);
+            nextState = new PlayerDeadState(inputData, playerAnimationSystem);
+        }
     }
 
     public override void Exit()

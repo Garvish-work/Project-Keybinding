@@ -50,6 +50,11 @@ public class PlayerIdleState : PlayerBaseState
             Exit();
             nextState = new PlayerAimState(inputData, playerAnimationSystem);
         }
+        if (inputData.isDead)
+        {
+            Exit();
+            nextState = new PlayerDeadState(inputData, playerAnimationSystem);
+        }
     }
 
     public override void Exit()

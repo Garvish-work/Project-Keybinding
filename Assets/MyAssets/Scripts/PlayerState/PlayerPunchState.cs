@@ -27,6 +27,11 @@ public class PlayerPunchState : PlayerBaseState
             Exit();
             nextState = new PlayerIdleState(inputData, playerAnimationSystem);
         }
+        if (inputData.isDead)
+        {
+            Exit();
+            nextState = new PlayerDeadState(inputData, playerAnimationSystem);
+        }
     }
 
     public override void Exit()

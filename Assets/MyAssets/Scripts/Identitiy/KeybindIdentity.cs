@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class KeybindIdentity : MonoBehaviour
 {
-
-
     [SerializeField] private KeybindingData keybindingData;    
     [SerializeField] private ActionToChange actionToChange;
     [SerializeField] private KeyCode defaultValue;

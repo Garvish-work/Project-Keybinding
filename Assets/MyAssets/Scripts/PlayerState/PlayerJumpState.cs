@@ -25,9 +25,13 @@ public class PlayerJumpState : PlayerBaseState
 
         if (jumpTimer >= inputData.jumpDuration)
         {
-
             Exit();
             nextState = new PlayerIdleState(inputData, playerAnimationSystem);
+        }
+        if (inputData.isDead)
+        {
+            Exit();
+            nextState = new PlayerDeadState(inputData, playerAnimationSystem);
         }
     }
 

@@ -13,6 +13,7 @@ public class InputSystem : MonoBehaviour
     PlayerCommand playerHealCommand = new PlayerHeal();
     PlayerCommand playerEditCommand = new PlayerEdit();
     PlayerCommand playerReloadCommand = new PlayerReload();
+    PlayerCommand playerRevivedCommand = new PlayerRevive();
 
     private void OnEnable()
     {
@@ -41,6 +42,7 @@ public class InputSystem : MonoBehaviour
         ChangeBindings(KeyCode.H, ActionToChange.PLAYER_HEAL);
         ChangeBindings(KeyCode.Escape, ActionToChange.EDITING);
         ChangeBindings(KeyCode.R, ActionToChange.PLAYER_RELOADING);
+        ChangeBindings(KeyCode.V, ActionToChange.PLAYER_REVIVED);
     }
 
     private void Update()
@@ -81,6 +83,9 @@ public class InputSystem : MonoBehaviour
                 break;
             case ActionToChange.PLAYER_RELOADING:
                 keybindingData.keybinds[playerReloadCommand] = keyTochange;
+                break;
+            case ActionToChange.PLAYER_REVIVED:
+                keybindingData.keybinds[playerRevivedCommand] = keyTochange;
                 break;
         }
     }

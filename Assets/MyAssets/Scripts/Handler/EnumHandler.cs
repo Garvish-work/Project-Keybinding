@@ -7,5 +7,6 @@ public enum ActionToChange
     WEAPON_AIM,
     PLAYER_HEAL,
     EDITING,
-    PLAYER_RELOADING
+    PLAYER_RELOADING,
+    PLAYER_REVIVED
 }
