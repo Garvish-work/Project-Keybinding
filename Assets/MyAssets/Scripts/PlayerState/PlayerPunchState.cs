@@ -13,6 +13,7 @@ public class PlayerPunchState : PlayerBaseState
         base.Enter();
         punchTimer = 0;
         inputData.inAction = true;
+        inputData.isCrouchableAction = false;
 
         playerAnimationSystem.TriggerPunch();
     }
@@ -33,5 +34,6 @@ public class PlayerPunchState : PlayerBaseState
         base.Exit();
         inputData.inAction = false;
         inputData.isPunching = false;
+        inputData.isCrouchableAction = true;
     }
 }

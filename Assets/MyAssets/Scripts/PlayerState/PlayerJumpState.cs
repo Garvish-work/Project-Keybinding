@@ -12,6 +12,8 @@ public class PlayerJumpState : PlayerBaseState
     {
         base.Enter();
         inputData.inAction = true;
+        inputData.isCrouchableAction = false;
+
         playerAnimationSystem.TriggerJump();
         jumpTimer = 0;
 
@@ -35,5 +37,6 @@ public class PlayerJumpState : PlayerBaseState
 
         inputData.inAction = false;
         inputData.isJumping = false;
+        inputData.isCrouchableAction = true;
     }
 }

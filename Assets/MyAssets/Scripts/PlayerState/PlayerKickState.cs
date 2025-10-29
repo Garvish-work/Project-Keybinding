@@ -12,6 +12,7 @@ public class PlayerKickState : PlayerBaseState
     {
         base.Enter();
         inputData.inAction = true;
+        inputData.isCrouchableAction = false;
 
         playerAnimationSystem.TriggerKick();
         kickDuration = 0;
@@ -33,5 +34,6 @@ public class PlayerKickState : PlayerBaseState
         base.Exit();
         inputData.inAction = false;
         inputData.isKicking = false;
+        inputData.isCrouchableAction = true;
     }
 }

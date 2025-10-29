@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InputData
   isEditing: 0
   inAction: 0
+  isCrouchableAction: 0
   isCrouching: 0
   isAiming: 0
   isJumping: 0
@@ -22,4 +23,6 @@ MonoBehaviour:
   kickDuration: 1.75
   isPunching: 0
   punchDuration: 0.8
+  isReloading: 0
+  reloadDuration: 2
   healDuration: 1.7

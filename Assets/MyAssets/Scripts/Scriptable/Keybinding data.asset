@@ -15,3 +15,7 @@ MonoBehaviour:
   editableButtonColor: {r: 1, g: 0.9411765, b: 0.654902, a: 1}
   editableCrossColor: {r: 1, g: 0.37254903, b: 0.37254903, a: 1}
   nonEditableColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+  mouseImage:
+    mouseLeft: {fileID: 21300000, guid: 9abe5659f942bc742a1c2b808fbebdfe, type: 3}
+    mouseRight: {fileID: 21300000, guid: 0f104ce8bedc0f343ad1c86cfff84222, type: 3}
+    mouseMiddle: {fileID: 21300000, guid: 1704d0fd93b5c1c49bca8aca00aae683, type: 3}

@@ -16,7 +16,7 @@ public class PlayerCrouch : PlayerCommand
     public override void Exicute(InputData inputData)
     {
         Debug.Log("Player crouched");
-        if (inputData.inAction || inputData.isEditing) return;
+        if (!inputData.isCrouchableAction || inputData.isEditing) return;
         inputData.isCrouching = !inputData.isCrouching;
     }
 }
@@ -72,5 +72,17 @@ public class PlayerEdit : PlayerCommand
         Debug.Log("Player in edit mode");
         inputData.isEditing = !inputData.isEditing;
         ActionHandler.OnPlayerEdit?.Invoke(inputData.isEditing);    
+    }
+}
+
+public class PlayerReload : PlayerCommand
+{
+    public override void Exicute(InputData inputData)
+    {
+        Debug.Log("Player in reloading");
+        if (inputData.inAction || inputData.isEditing) return;
+
+        //if (inputData.isAiming) inputData.isReloading = true;
+        inputData.isReloading = inputData.isAiming ? true : false;
     }
 }

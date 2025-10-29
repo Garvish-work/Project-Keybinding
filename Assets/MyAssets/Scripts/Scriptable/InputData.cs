@@ -5,6 +5,7 @@ public class InputData : ScriptableObject
 {
     public bool isEditing = false;
     public bool inAction = false;
+    public bool isCrouchableAction = false;
 
     public bool isCrouching = false;
     public bool isAiming = false;
@@ -20,6 +21,10 @@ public class InputData : ScriptableObject
     [Space]
     public bool isPunching = false;
     public float punchDuration = 2f;
+
+    [Space]
+    public bool isReloading = false;
+    public float reloadDuration = 1.5f;
 
     [Space]
     public float healDuration = 1f;

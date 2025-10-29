@@ -10,6 +10,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
+        inputData.isCrouchableAction = true;
     }
 
     public override void Update()
