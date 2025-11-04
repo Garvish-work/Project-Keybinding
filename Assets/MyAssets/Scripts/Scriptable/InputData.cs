@@ -5,7 +5,7 @@ public class InputData : ScriptableObject
 {
     public bool isDead = false;
     public int playerHealth = 3;
-    public int playerMaxHealth = 3;
+    public int playerMaxHealth = 225;
 
     [Space]
     public bool isEditing = false;

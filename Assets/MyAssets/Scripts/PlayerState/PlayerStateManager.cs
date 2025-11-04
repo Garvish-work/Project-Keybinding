@@ -8,16 +8,6 @@ public class PlayerStateManager : MonoBehaviour
     [SerializeField] private PlayerAnimationSystem playerAnimationSystem;
     PlayerBaseState playerCurrentState;
 
-    private void OnEnable()
-    {
-        ActionHandler.OnPlayerGetHit += PlayerGotHit;   
-    }
-
-    private void OnDisable()
-    {
-        ActionHandler.OnPlayerGetHit -= PlayerGotHit;   
-    }
-
     private void Awake()
     {
         instnace = this;

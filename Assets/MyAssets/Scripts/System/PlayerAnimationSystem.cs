@@ -50,10 +50,12 @@ public class PlayerAnimationSystem : MonoBehaviour
             healTimer += Time.deltaTime;
             yield return null;
         }
+        ActionHandler.ChangePlayerHealth?.Invoke(50, "add");
+
         inputData.inAction = false;
         healthBoxHolder.SetActive(false);
     }
-    private void TriggerGetHit()
+    private void TriggerGetHit(int i)
     {
         int randomIndex = Random.Range(0, 3);
         playerAnime.SetTrigger("GetHit");

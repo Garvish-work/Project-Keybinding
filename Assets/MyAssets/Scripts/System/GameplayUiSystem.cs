@@ -1,10 +1,16 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 public class GameplayUiSystem : MonoBehaviour
 {
+    [SerializeField] private InputData inputData;
     [SerializeField] private Image gethitBar;
+
+    [Header ("Health ui")]
+    [SerializeField] private Image healthBar;
+    [SerializeField] private TMP_Text healthText;
 
     float hitTimer = 0;
     float timerMultiplier = 0.5f;
@@ -14,10 +20,12 @@ public class GameplayUiSystem : MonoBehaviour
     private void OnEnable()
     {
         ActionHandler.OnPlayerDead += PlayerDead;
+        ActionHandler.UpdateHealthUi += UpdateHealthUi;
     }
     private void OnDisable()
     {
         ActionHandler.OnPlayerDead -= PlayerDead;
+        ActionHandler.UpdateHealthUi -= UpdateHealthUi;
     }
 
     private void PlayerDead()
@@ -42,12 +50,17 @@ public class GameplayUiSystem : MonoBehaviour
             else
             {
                 hitTimer = 0;
-                ActionHandler.OnPlayerGetHit?.Invoke();
+                ActionHandler.OnPlayerGetHit?.Invoke(33); 
             }
 
             gethitBar.fillAmount = hitTimer;
             yield return null;  
         }
+    }
 
+    private void UpdateHealthUi(int healthCount)
+    { 
+        healthText.text = healthCount.ToString();
+        healthBar.fillAmount = Mathf.InverseLerp(0, inputData.playerMaxHealth, healthCount);
     }
 }

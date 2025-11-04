@@ -8,8 +8,10 @@ public static class ActionHandler
     public static Action OnResetToDefault;    
     public static Action OnWeaponFire;    
     public static Action OnPlayerHeal;    
+    public static Action<int, string> ChangePlayerHealth;    
     public static Action<bool> OnPlayerEdit;    
-    public static Action OnPlayerGetHit;
+    public static Action<int> OnPlayerGetHit;
     public static Action OnPlayerDead;    
     public static Action OnPlayerRevive;    
+    public static Action<int> UpdateHealthUi;    
 }

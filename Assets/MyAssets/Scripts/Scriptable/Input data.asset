@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Input data
   m_EditorClassIdentifier: Assembly-CSharp::InputData
   isDead: 0
-  playerHealth: 3
-  playerMaxHealth: 3
+  playerHealth: 225
+  playerMaxHealth: 225
   isEditing: 0
   inAction: 0
   isCrouchableAction: 1

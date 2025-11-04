@@ -38,7 +38,5 @@ public class PlayerRevivingState : PlayerBaseState
         inputData.isKicking = false;
         inputData.isPunching = false;
         inputData.isReloading = false;
-
-        inputData.playerHealth = inputData.playerMaxHealth;
     }
 }
