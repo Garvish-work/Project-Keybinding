@@ -20,8 +20,13 @@ public class GameplayVfxSystem : MonoBehaviour
         healingVfx.Play(true);
     }
 
-    private void muzzleFlash()
+    private void muzzleFlash(WeaponData _weaponData)
     {
-        akVfx.Play(true);
+        switch (_weaponData.weaponName)
+        {
+            case WeaponName.AK46:
+                akVfx.Play(true);
+                break;
+        }
     }
 }

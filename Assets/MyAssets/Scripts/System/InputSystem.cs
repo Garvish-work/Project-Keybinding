@@ -4,6 +4,7 @@ public class InputSystem : MonoBehaviour
 {
     [SerializeField] public KeybindingData keybindingData;
     [SerializeField] public InputData inputData;
+    [SerializeField] public WeaponInfoData weaponInfoData;
 
     PlayerCommand playerCrouchCommand = new PlayerCrouch();
     PlayerCommand playerKickCommand = new PlayerKick();
@@ -51,7 +52,7 @@ public class InputSystem : MonoBehaviour
         {
             if (Input.GetKeyDown(bind.Value))
             {
-                bind.Key.Exicute(inputData);
+                bind.Key.Exicute(inputData, weaponInfoData);
             }
         }
     }

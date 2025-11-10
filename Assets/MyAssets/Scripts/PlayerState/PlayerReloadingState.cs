@@ -14,6 +14,7 @@ public class PlayerReloadingState : PlayerBaseState
         inputData.inAction = true;
         inputData.isCrouchableAction = true;
 
+        ActionHandler.OnReloadStarted?.Invoke();
         playerAnimationSystem.TriggerReload();
         reloadTimer = 0;
     }
@@ -26,11 +27,13 @@ public class PlayerReloadingState : PlayerBaseState
         if (reloadTimer >= inputData.reloadDuration)
         {
             Exit();
+            ActionHandler.OnReloadComplete?.Invoke();
             nextState = new PlayerAimState(inputData, playerAnimationSystem);
         }
         if (inputData.isDead)
         {
             Exit();
+            ActionHandler.OnWeaponChanged(WeaponName.HANDS);
             playerAnimationSystem.AimWeapon(false);
             nextState = new PlayerDeadState(inputData, playerAnimationSystem);
         }

@@ -29,9 +29,14 @@ public class PlayerAnimationSystem : MonoBehaviour
         ActionHandler.OnPlayerHeal -= TriggerHeal;
         ActionHandler.OnPlayerGetHit -= TriggerGetHit;
     }
-    private void WeaponFire()
+    private void WeaponFire(WeaponData _weaponData)
     {
-        playerAnime.SetTrigger("Shoot");
+        switch (_weaponData.weaponName)
+        {
+            case WeaponName.AK46:
+                playerAnime.SetTrigger("Shoot");
+                break;
+        }
     }
     public void TriggerHeal()
     {
@@ -61,6 +66,10 @@ public class PlayerAnimationSystem : MonoBehaviour
     }
     #endregion
 
+    public void Start()
+    {
+        ActionHandler.OnWeaponChanged(WeaponName.HANDS);
+    }
 
     public void SetCrouchValue(bool value)
     {
@@ -109,19 +118,24 @@ public class PlayerAnimationSystem : MonoBehaviour
     }
 
     float aimValue = 0;
+    float _value = 0;
+    bool coroutineStarted = false;
     public void AimWeapon(bool aimFlag)
     {
-        StartCoroutine(nameof(UpdateAimValue), aimFlag ? 1 : 0);
+        if (aimFlag) _value = 1; else _value = 0;
+        if (!coroutineStarted) StartCoroutine(nameof(UpdateAimValue));
     }
 
-    private IEnumerator UpdateAimValue(float desireValue)
+    private IEnumerator UpdateAimValue()
     {
-        while (aimValue != desireValue)
+        coroutineStarted = true;
+        while (aimValue != _value)
         {
             akMainHolder.localScale = Vector4.one * aimValue;   
-            aimValue = Mathf.MoveTowards(aimValue, desireValue, 5 * Time.deltaTime);
+            aimValue = Mathf.MoveTowards(aimValue, _value, 5 * Time.deltaTime);
             playerAnime.SetLayerWeight(1, aimValue);
             yield return null;  
         }
+        coroutineStarted = false;
     }
 }

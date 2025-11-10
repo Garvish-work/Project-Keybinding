@@ -10,3 +10,21 @@ public enum ActionToChange
     PLAYER_RELOADING,
     PLAYER_REVIVED
 }
+
+public enum WeaponName
+{
+    HANDS,
+    AK46
+}
+
+public enum WeaponType
+{
+    SINGLE,
+    AUTO
+}
+
+public enum AmmoType
+{
+    FINITE,
+    INFINITE
+}

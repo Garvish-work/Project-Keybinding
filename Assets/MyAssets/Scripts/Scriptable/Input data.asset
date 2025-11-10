@@ -19,7 +19,7 @@ MonoBehaviour:
   inAction: 0
   isCrouchableAction: 1
   isCrouching: 0
-  isAiming: 0
+  isAiming: 1
   isJumping: 0
   jumpDuration: 1.5
   isKicking: 0

@@ -10,6 +10,7 @@ public class PlayerAimState : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
+        ActionHandler.OnWeaponChanged(WeaponName.AK46);
         playerAnimationSystem.AimWeapon(true);
         inputData.isCrouchableAction = true;
     }
@@ -20,17 +21,20 @@ public class PlayerAimState : PlayerBaseState
         
         if (!inputData.isAiming) 
         {
+            ActionHandler.OnWeaponChanged(WeaponName.HANDS);
             playerAnimationSystem.AimWeapon(false);
             nextState = new PlayerIdleState(inputData, playerAnimationSystem);
             Exit();
         }
         if (inputData.isReloading)
         {
+            ActionHandler.OnWeaponChanged(WeaponName.AK46);
             nextState = new PlayerReloadingState(inputData, playerAnimationSystem);
             Exit();
         }
         if (inputData.isDead)
         {
+            ActionHandler.OnWeaponChanged(WeaponName.HANDS);
             Exit();
             playerAnimationSystem.AimWeapon(false);
             nextState = new PlayerDeadState(inputData, playerAnimationSystem);
