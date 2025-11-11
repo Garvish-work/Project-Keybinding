@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class InputSystem : MonoBehaviour
 {
+    WeaponController weaponController;
+
     [SerializeField] public KeybindingData keybindingData;
     [SerializeField] public InputData inputData;
 
@@ -29,6 +31,7 @@ public class InputSystem : MonoBehaviour
 
     private void Start()
     {
+        weaponController = WeaponController.instance;
         B_ResetToDefaut();
     }
 
@@ -51,7 +54,7 @@ public class InputSystem : MonoBehaviour
         {
             if (Input.GetKeyDown(bind.Value))
             {
-                bind.Key.Exicute(inputData);
+                bind.Key.Exicute(inputData, weaponController);
             }
         }
     }

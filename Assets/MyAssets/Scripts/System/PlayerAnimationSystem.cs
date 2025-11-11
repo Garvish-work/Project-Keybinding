@@ -19,19 +19,27 @@ public class PlayerAnimationSystem : MonoBehaviour
     #region LISTENERS
     private void OnEnable()
     {
-        ActionHandler.OnWeaponFire += WeaponFire;
+        ActionHandler.CatchWeaponFire += WeaponFire;
         ActionHandler.OnPlayerHeal += TriggerHeal;
         ActionHandler.OnPlayerGetHit += TriggerGetHit;
     }
     private void OnDisable()
     {
-        ActionHandler.OnWeaponFire -= WeaponFire;
+        ActionHandler.CatchWeaponFire -= WeaponFire;
         ActionHandler.OnPlayerHeal -= TriggerHeal;
         ActionHandler.OnPlayerGetHit -= TriggerGetHit;
     }
-    private void WeaponFire()
+    private void WeaponFire(WeaponID _weaponId)
     {
-        playerAnime.SetTrigger("Shoot");
+        switch (_weaponId)
+        {
+            case WeaponID.HANDS:
+                inputData.isPunching = true;
+                break;
+            case WeaponID.AK46:
+                playerAnime.SetTrigger("Shoot");
+                break;
+        }
     }
     public void TriggerHeal()
     {

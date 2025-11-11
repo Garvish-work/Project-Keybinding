@@ -7,12 +7,12 @@ public class GameplayVfxSystem : MonoBehaviour
     private void OnEnable()
     {
         ActionHandler.OnPlayerRevive += PlayerRevived;
-        ActionHandler.OnWeaponFire += muzzleFlash;
+        ActionHandler.CatchWeaponFire += muzzleFlash;
     }
     private void OnDisable()
     {
         ActionHandler.OnPlayerRevive -= PlayerRevived;
-        ActionHandler.OnWeaponFire -= muzzleFlash;
+        ActionHandler.CatchWeaponFire -= muzzleFlash;
     }
 
     private void PlayerRevived()
@@ -20,8 +20,13 @@ public class GameplayVfxSystem : MonoBehaviour
         healingVfx.Play(true);
     }
 
-    private void muzzleFlash()
+    private void muzzleFlash(WeaponID _weaponId)
     {
-        akVfx.Play(true);
+        switch (_weaponId)
+        {
+            case WeaponID.AK46:
+                akVfx.Play(true);
+                break;
+        }
     }
 }

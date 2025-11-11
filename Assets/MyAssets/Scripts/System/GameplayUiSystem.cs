@@ -8,6 +8,12 @@ public class GameplayUiSystem : MonoBehaviour
     [SerializeField] private InputData inputData;
     [SerializeField] private Image gethitBar;
 
+    [Header ("Weapon ui")]
+    [SerializeField] private Image weaponIconImage;
+    [SerializeField] private TMP_Text weaponNameText;
+    [SerializeField] private TMP_Text weaponAmmoText;
+
+
     [Header ("Health ui")]
     [SerializeField] private Image healthBar;
     [SerializeField] private TMP_Text healthText;
@@ -21,11 +27,13 @@ public class GameplayUiSystem : MonoBehaviour
     {
         ActionHandler.OnPlayerDead += PlayerDead;
         ActionHandler.UpdateHealthUi += UpdateHealthUi;
+        ActionHandler.OnUpdateWeaponUi += UpdateWeaponUi;
     }
     private void OnDisable()
     {
         ActionHandler.OnPlayerDead -= PlayerDead;
         ActionHandler.UpdateHealthUi -= UpdateHealthUi;
+        ActionHandler.OnUpdateWeaponUi -= UpdateWeaponUi;
     }
 
     private void PlayerDead()
@@ -62,5 +70,12 @@ public class GameplayUiSystem : MonoBehaviour
     { 
         healthText.text = healthCount.ToString();
         healthBar.fillAmount = Mathf.InverseLerp(0, inputData.playerMaxHealth, healthCount);
+    }
+
+    private void UpdateWeaponUi(WeaponData _weaponData)
+    {
+        weaponIconImage.sprite = _weaponData.weaponIcon;
+        weaponAmmoText.text = _weaponData.ammoAvailable.ToString("000");
+        weaponNameText.text = _weaponData.weaponName;
     }
 }

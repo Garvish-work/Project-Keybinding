@@ -582,6 +582,7 @@ Transform:
   - {fileID: 537999265}
   - {fileID: 170475168}
   - {fileID: 2006585274}
+  - {fileID: 1785357032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &532646876 stripped
@@ -640,6 +641,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameplayUiSystem
   inputData: {fileID: 11400000, guid: 7d4fc03cb8543ce48a64124fcc91f189, type: 2}
   gethitBar: {fileID: 601673250}
+  weaponIconImage: {fileID: 0}
+  weaponNameText: {fileID: 0}
+  weaponAmmoText: {fileID: 0}
   healthBar: {fileID: 708626047}
   healthText: {fileID: 1434417235}
 --- !u!114 &601673250 stripped
@@ -1425,6 +1429,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 61355934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1059143094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059143095}
+  - component: {fileID: 1059143096}
+  m_Layer: 0
+  m_Name: Weapon ak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1059143095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059143094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1785357032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1059143096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059143094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203607bb1d2061b47a778150623c8e11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponAk
+  inputData: {fileID: 11400000, guid: 7d4fc03cb8543ce48a64124fcc91f189, type: 2}
+  weaponData: {fileID: 11400000, guid: 175e6a65bb8abf646811928d52e922e8, type: 2}
 --- !u!1001 &1221456731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1579,6 +1629,52 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1333796928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333796929}
+  - component: {fileID: 1333796930}
+  m_Layer: 0
+  m_Name: Weapon hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1333796929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333796928}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1785357032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333796930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333796928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0d8d4957332df45a84ac0693060946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponHand
+  inputData: {fileID: 11400000, guid: 7d4fc03cb8543ce48a64124fcc91f189, type: 2}
+  weaponData: {fileID: 11400000, guid: d018119480ee9e4419f2d0e9b512f4de, type: 2}
 --- !u!114 &1434417235 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6793638469377961915, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
@@ -1801,6 +1897,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStateManager
   inputData: {fileID: 11400000, guid: 7d4fc03cb8543ce48a64124fcc91f189, type: 2}
   playerAnimationSystem: {fileID: 995868815}
+--- !u!1 &1785357031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785357032}
+  - component: {fileID: 1785357033}
+  m_Layer: 0
+  m_Name: Weapon controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1785357032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785357031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1333796929}
+  - {fileID: 1059143095}
+  m_Father: {fileID: 484971280}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1785357033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785357031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bf6b97c23a14945a4c08cc1e6cea0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponController
+  currentWeapon: {fileID: 0}
+  weaponHand: {fileID: 1333796930}
+  weaponAk: {fileID: 0}
 --- !u!224 &1864032036 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1403610869706949166, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
