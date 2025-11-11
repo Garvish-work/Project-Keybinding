@@ -10,3 +10,15 @@ public enum ActionToChange
     PLAYER_RELOADING,
     PLAYER_REVIVED
 }
+
+public enum WeaponID
+{
+    HANDS,
+    AK46
+}
+
+public enum AmmoType
+{
+    FINITY,
+    INFINITY
+}

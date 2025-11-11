@@ -48,8 +48,10 @@ public class PlayerWeaponFire : PlayerCommand
 
         if (inputData.inAction || inputData.isEditing) return;
 
-        if (inputData.isAiming) ActionHandler.OnWeaponFire?.Invoke();
-        else inputData.isPunching = true;
+        ActionHandler.OnWeaponFire?.Invoke();
+
+        //if (inputData.isAiming) ActionHandler.OnWeaponFire?.Invoke();
+        //else inputData.isPunching = true;
     }
 }
 
