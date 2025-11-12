@@ -1,3 +1,5 @@
+using System.Drawing;
+
 public enum ActionToChange
 {
     CROUCHING,
@@ -21,4 +23,10 @@ public enum AmmoType
 {
     FINITY,
     INFINITY
+}
+
+public enum UiUpdateType
+{
+    FULL,
+    WEAPON_AMMO
 }

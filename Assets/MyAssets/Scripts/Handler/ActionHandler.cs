@@ -14,7 +14,8 @@ public static class ActionHandler
     public static Action<WeaponID> CatchWeaponFire;    
     public static Action OnWeaponReloadStart;    
     public static Action OnWeaponReloadCompleted;    
-    public static Action<WeaponID> OnWeaponChange;    
+    public static Action<WeaponID> OnWeaponChange;
+    public static Action OnNoAmmo;
 
     // player actions
     public static Action OnPlayerHeal;    
@@ -25,5 +26,5 @@ public static class ActionHandler
 
     // ui actions
     public static Action<int> UpdateHealthUi;    
-    public static Action<WeaponData> OnUpdateWeaponUi;    
+    public static Action<WeaponData, UiUpdateType> OnUpdateWeaponUi;    
 }

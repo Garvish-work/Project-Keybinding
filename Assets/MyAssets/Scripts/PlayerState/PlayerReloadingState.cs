@@ -16,6 +16,8 @@ public class PlayerReloadingState : PlayerBaseState
 
         playerAnimationSystem.TriggerReload();
         reloadTimer = 0;
+
+        ActionHandler.OnWeaponReloadStart();
     }
 
     public override void Update()
@@ -26,12 +28,16 @@ public class PlayerReloadingState : PlayerBaseState
         if (reloadTimer >= inputData.reloadDuration)
         {
             Exit();
+            ActionHandler.OnWeaponReloadCompleted();
+
             nextState = new PlayerAimState(inputData, playerAnimationSystem);
         }
         if (inputData.isDead)
         {
             Exit();
             playerAnimationSystem.AimWeapon(false);
+            ActionHandler.OnWeaponReloadCompleted();
+
             nextState = new PlayerDeadState(inputData, playerAnimationSystem);
         }
     }

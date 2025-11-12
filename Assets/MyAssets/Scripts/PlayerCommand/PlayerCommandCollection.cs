@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerJump : PlayerCommand
@@ -98,7 +99,9 @@ public class PlayerReload : PlayerCommand
 
         if (inputData.inAction || inputData.isEditing) return;
 
-
+        WeaponData wData = weaponController.GetCurrentWeaponData();
+        if (wData.ammoAvailable == wData.ammoCapacity || !wData.isReloadable) return;
+        
         ActionHandler.OnWeaponReloadStart?.Invoke();
 
         //if (inputData.isAiming) inputData.isReloading = true; //--1

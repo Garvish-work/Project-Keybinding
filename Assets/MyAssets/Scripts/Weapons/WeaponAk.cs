@@ -17,6 +17,7 @@ public class WeaponAk : WeaponBehaviour
 
     public override void Fire()
     {
-        
+        weaponData.ammoAvailable--;
+        ActionHandler.OnUpdateWeaponUi(weaponData, UiUpdateType.WEAPON_AMMO); 
     }
 }

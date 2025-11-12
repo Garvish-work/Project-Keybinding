@@ -4,6 +4,7 @@ public class WeaponController : MonoBehaviour
 {
     public static WeaponController instance;
 
+    WeaponData currentWeaponData;
     [SerializeField] private WeaponBehaviour currentWeapon;
 
     [Space]
@@ -14,12 +15,16 @@ public class WeaponController : MonoBehaviour
     {
         ActionHandler.OnWeaponFire += WeaponFire;
         ActionHandler.OnWeaponChange += WeaponChange;
+        ActionHandler.OnWeaponReloadStart += WeaponReloadStart;
+        ActionHandler.OnWeaponReloadCompleted += WeaponReloadCompleted;
     }
 
     private void OnDisable()
     {
         ActionHandler.OnWeaponChange -= WeaponChange;
         ActionHandler.OnWeaponFire -= WeaponFire;
+        ActionHandler.OnWeaponReloadStart -= WeaponReloadStart;
+        ActionHandler.OnWeaponReloadCompleted -= WeaponReloadCompleted;
     }
 
     private void Awake()
@@ -29,13 +34,24 @@ public class WeaponController : MonoBehaviour
 
     private void Start()
     {
-        currentWeapon = weaponHand;
+        WeaponChange(WeaponID.HANDS);
     }
 
     private void WeaponFire()
     {
+        if (currentWeaponData.ammoAvailable <= 0)
+        {
+            ActionHandler.OnNoAmmo?.Invoke();
+            return;
+        }
+
         currentWeapon.Fire();
-        ActionHandler.CatchWeaponFire?.Invoke(currentWeapon.GetWeaponData().weaponId);
+        ActionHandler.CatchWeaponFire?.Invoke(currentWeaponData.weaponId);
+    }
+
+    private void WeaponReloadStart()
+    {
+        currentWeapon.Reload();
     }
 
     private void WeaponChange (WeaponID _weaponId)
@@ -49,11 +65,18 @@ public class WeaponController : MonoBehaviour
                 currentWeapon = weaponAk;
                 break;
         }
-        ActionHandler.OnUpdateWeaponUi?.Invoke(currentWeapon.GetWeaponData());
+        currentWeaponData = currentWeapon.GetWeaponData();
+        ActionHandler.OnUpdateWeaponUi?.Invoke(currentWeaponData, UiUpdateType.FULL);
     }
 
     public WeaponData GetCurrentWeaponData()
     {
-        return currentWeapon.GetWeaponData();
+        return currentWeaponData;
+    }
+
+    private void WeaponReloadCompleted()
+    {
+        currentWeaponData.ammoAvailable = currentWeaponData.ammoCapacity;
+        ActionHandler.OnUpdateWeaponUi(currentWeaponData, UiUpdateType.FULL);
     }
 }

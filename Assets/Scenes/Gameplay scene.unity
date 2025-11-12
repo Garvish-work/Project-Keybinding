@@ -414,6 +414,17 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &389917711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1373623038745033362, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+  m_PrefabInstance: {fileID: 3144847944437864647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!4 &391800812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: a60bc5511c77bd04d903ff52f6dce714, type: 3}
@@ -585,6 +596,17 @@ Transform:
   - {fileID: 1785357032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488308909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6003315158165958323, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+  m_PrefabInstance: {fileID: 3144847944437864647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!198 &532646876 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6211125795773073634, guid: 12a56ee4630040c4eb17ae9707ed4cef, type: 3}
@@ -639,11 +661,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4a8c9f9562b314b882785f85ecf213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayUiSystem
-  inputData: {fileID: 11400000, guid: 7d4fc03cb8543ce48a64124fcc91f189, type: 2}
   gethitBar: {fileID: 601673250}
-  weaponIconImage: {fileID: 0}
-  weaponNameText: {fileID: 0}
-  weaponAmmoText: {fileID: 0}
+  inputData: {fileID: 11400000, guid: 7d4fc03cb8543ce48a64124fcc91f189, type: 2}
+  weaponIconImage: {fileID: 2008707550}
+  weaponNameText: {fileID: 389917711}
+  weaponAmmoText: {fileID: 488308909}
   healthBar: {fileID: 708626047}
   healthText: {fileID: 1434417235}
 --- !u!114 &601673250 stripped
@@ -934,7 +956,7 @@ Transform:
   m_GameObject: {fileID: 759909553}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.01143, y: -0.86679, z: -0.00005}
+  m_LocalPosition: {x: 0.185, y: -0.86679, z: -0.00005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1423,7 +1445,7 @@ Transform:
   m_GameObject: {fileID: 1049527251}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01143, y: -0.89779, z: -0.00005}
+  m_LocalPosition: {x: 0.185, y: -0.89779, z: -0.00005}
   m_LocalScale: {x: 1.5, y: 0.0787, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1945,7 +1967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponController
   currentWeapon: {fileID: 0}
   weaponHand: {fileID: 1333796930}
-  weaponAk: {fileID: 0}
+  weaponAk: {fileID: 1059143096}
 --- !u!224 &1864032036 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1403610869706949166, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
@@ -2001,6 +2023,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthSystem
   inputData: {fileID: 11400000, guid: 7d4fc03cb8543ce48a64124fcc91f189, type: 2}
+--- !u!1 &2008707548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1308992587781656925, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+  m_PrefabInstance: {fileID: 3144847944437864647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2008707550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3157543859773589434, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+  m_PrefabInstance: {fileID: 3144847944437864647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008707548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!95 &2008707552
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008707548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4cc2750bc9678a9458a27cb809a94fbf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2047419097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,6 +3025,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2047419098}
     m_Modifications:
+    - target: {fileID: 504258920743719025, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1403610869706949166, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3045,6 +3109,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3157543859773589434, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157543859773589434, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157543859773589434, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003315158165958323, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 7803829582307788143, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
       propertyPath: m_Name
       value: Player health canvas
@@ -3052,7 +3132,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1308992587781656925, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2008707552}
   m_SourcePrefab: {fileID: 100100000, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
 --- !u!1001 &7575861438094118665
 PrefabInstance:
