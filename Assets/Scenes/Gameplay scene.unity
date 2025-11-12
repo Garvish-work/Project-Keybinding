@@ -3208,6 +3208,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3157543859773589434, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157543859773589434, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157543859773589434, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570146190525818733, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178413470926931107, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00002670288
+      objectReference: {fileID: 0}
     - target: {fileID: 7803829582307788143, guid: c418e207635851a4fbf9a17a4d235db8, type: 3}
       propertyPath: m_Name
       value: Player health canvas
