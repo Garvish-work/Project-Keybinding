@@ -20,13 +20,13 @@ public class PlayerAnimationSystem : MonoBehaviour
     private void OnEnable()
     {
         ActionHandler.CatchWeaponFire += WeaponFire;
-        ActionHandler.OnPlayerHeal += TriggerHeal;
+        ActionHandler.OnCatchUtility += UseUtility;
         ActionHandler.OnPlayerGetHit += TriggerGetHit;
     }
     private void OnDisable()
     {
         ActionHandler.CatchWeaponFire -= WeaponFire;
-        ActionHandler.OnPlayerHeal -= TriggerHeal;
+        ActionHandler.OnCatchUtility -= UseUtility;
         ActionHandler.OnPlayerGetHit -= TriggerGetHit;
     }
     private void WeaponFire(WeaponID _weaponId)
@@ -41,9 +41,14 @@ public class PlayerAnimationSystem : MonoBehaviour
                 break;
         }
     }
-    public void TriggerHeal()
+    public void UseUtility(UtilityID _utilityId)
     {
-        StartCoroutine(nameof(AppleHealing));
+        switch (_utilityId)
+        {
+            case UtilityID.HEAL:
+                StartCoroutine(nameof(AppleHealing));
+                break;
+        }
     }
     private IEnumerator AppleHealing()
     {
@@ -58,7 +63,7 @@ public class PlayerAnimationSystem : MonoBehaviour
             healTimer += Time.deltaTime;
             yield return null;
         }
-        ActionHandler.ChangePlayerHealth?.Invoke(50, "add");
+        ActionHandler.OnHealingCompleted?.Invoke();
 
         inputData.inAction = false;
         healthBoxHolder.SetActive(false);

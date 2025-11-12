@@ -9,6 +9,14 @@ public static class ActionHandler
     public static Action OnResetToDefault;    
     public static Action<bool> OnPlayerEdit;    
 
+    // utility actions
+    public static Action OnUseUtility;    
+    public static Action<UtilityID> OnCatchUtility;    
+    public static Action<int, string> ChangePlayerHealth;    
+    public static Action OnHealingCompleted;    
+    public static Action<UtilityData, UiUpdateType> OnUpdateUtilityUi;
+    public static Action OnNoUtility;
+
     // weapon actions
     public static Action OnWeaponFire;    
     public static Action<WeaponID> CatchWeaponFire;    
@@ -18,8 +26,6 @@ public static class ActionHandler
     public static Action OnNoAmmo;
 
     // player actions
-    public static Action OnPlayerHeal;    
-    public static Action<int, string> ChangePlayerHealth;    
     public static Action<int> OnPlayerGetHit;
     public static Action OnPlayerDead;    
     public static Action OnPlayerRevive;    

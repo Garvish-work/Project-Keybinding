@@ -28,5 +28,11 @@ public enum AmmoType
 public enum UiUpdateType
 {
     FULL,
-    WEAPON_AMMO
+    WEAPON_AMMO,
+    UTILITY_COUNT
+}
+
+public enum UtilityID
+{
+    HEAL
 }

@@ -12,7 +12,7 @@ public class InputSystem : MonoBehaviour
     PlayerCommand playerJumpCommand = new PlayerJump();
     PlayerCommand playerweaponFire = new PlayerWeaponFire();
     PlayerCommand playerweaponAim = new PlayerWeaponAim();
-    PlayerCommand playerHealCommand = new PlayerHeal();
+    PlayerCommand playerHealCommand = new PlayerUtility();
     PlayerCommand playerEditCommand = new PlayerEdit();
     PlayerCommand playerReloadCommand = new PlayerReload();
     PlayerCommand playerRevivedCommand = new PlayerRevive();

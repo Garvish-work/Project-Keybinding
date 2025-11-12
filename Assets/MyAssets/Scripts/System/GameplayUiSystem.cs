@@ -11,11 +11,15 @@ public class GameplayUiSystem : MonoBehaviour
     [SerializeField] private Image gethitBar;
     [SerializeField] private InputData inputData;
 
+    [Header("Utility ui")]
+    [SerializeField] private Image utilityIcon;
+    [SerializeField] private Animator utilityIconAnimator;
+    [SerializeField] private TMP_Text utilityCountText;
+
     [Header ("Weapon ui")]
     [SerializeField] private Image weaponIconImage;
     [SerializeField] private TMP_Text weaponNameText;
     [SerializeField] private TMP_Text weaponAmmoText;
-
 
     [Header ("Health ui")]
     [SerializeField] private Image healthBar;
@@ -38,6 +42,8 @@ public class GameplayUiSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        ActionHandler.OnNoUtility += NoUtility;
+        ActionHandler.OnUpdateUtilityUi += UpdateUtilityUi;
         ActionHandler.OnPlayerDead += PlayerDead;
         ActionHandler.OnNoAmmo += NoAmmo;
         ActionHandler.UpdateHealthUi += UpdateHealthUi;
@@ -46,6 +52,8 @@ public class GameplayUiSystem : MonoBehaviour
     }
     private void OnDisable()
     {
+        ActionHandler.OnNoUtility -= NoUtility;
+        ActionHandler.OnUpdateUtilityUi -= UpdateUtilityUi;
         ActionHandler.OnPlayerDead -= PlayerDead;
         ActionHandler.OnNoAmmo -= NoAmmo;
         ActionHandler.UpdateHealthUi -= UpdateHealthUi;
@@ -135,5 +143,22 @@ public class GameplayUiSystem : MonoBehaviour
     private void NoAmmo()
     {
         weaponIconAnimator.SetTrigger("Shake");
+    }
+
+    private void UpdateHealthPotion (int _count)
+    {
+        utilityCountText.text = _count.ToString("00");
+    }
+
+    private void UpdateUtilityUi (UtilityData _utilityData, UiUpdateType _uiUpdateType)
+    {
+        utilityIcon.sprite = _utilityData.utilityIcon;
+        utilityCountText.text = _utilityData.availableCount.ToString("00");
+        utilityIconAnimator.SetTrigger("Consumed");
+    }
+
+    private void NoUtility()
+    {
+        utilityIconAnimator.SetTrigger("Empty");
     }
 }

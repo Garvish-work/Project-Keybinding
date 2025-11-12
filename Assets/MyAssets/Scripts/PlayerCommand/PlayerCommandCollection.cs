@@ -68,7 +68,7 @@ public class PlayerWeaponAim : PlayerCommand
     }
 }
 
-public class PlayerHeal : PlayerCommand
+public class PlayerUtility : PlayerCommand
 {
     public override void Exicute(InputData inputData, WeaponController weaponController)
     {
@@ -76,7 +76,7 @@ public class PlayerHeal : PlayerCommand
         if (inputData.isDead) return;
 
         if (inputData.inAction || inputData.isEditing) return;
-        ActionHandler.OnPlayerHeal?.Invoke();
+        ActionHandler.OnUseUtility?.Invoke();
     }
 }
 
