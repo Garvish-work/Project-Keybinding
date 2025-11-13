@@ -12,12 +12,14 @@ public class WeaponAk : WeaponBehaviour
 
     public override void Reload()
     {
-        inputData.isReloading = true;   
+        inputData.isReloading = true;
+        ActionHandler.OnRequestSoundEffect(weaponData.weaponReloadSfx); 
     }
 
     public override void Fire()
     {
         weaponData.ammoAvailable--;
+        ActionHandler.OnRequestSoundEffect(weaponData.weaponFireSfx); 
         ActionHandler.OnUpdateWeaponUi(weaponData, UiUpdateType.WEAPON_AMMO); 
     }
 }

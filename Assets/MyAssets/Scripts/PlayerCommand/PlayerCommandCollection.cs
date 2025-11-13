@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerJump : PlayerCommand
@@ -22,6 +21,8 @@ public class PlayerCrouch : PlayerCommand
         if (inputData.isDead) return;
 
         if (!inputData.isCrouchableAction || inputData.isEditing) return;
+
+        ActionHandler.OnRequestSoundEffect?.Invoke(SoundEffects.CROUCH);
         inputData.isCrouching = !inputData.isCrouching;
     }
 }

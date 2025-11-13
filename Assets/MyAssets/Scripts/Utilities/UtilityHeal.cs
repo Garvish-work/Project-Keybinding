@@ -27,6 +27,8 @@ public class UtilityHeal : UtilityBehaviour
         utilityData.availableCount--;
         if (!regenerating) StartCoroutine(nameof(RegenerateUtility));
         else ActionHandler.OnUpdateUtilityUi?.Invoke(utilityData, UiUpdateType.UTILITY_COUNT);
+
+        ActionHandler.OnRequestSoundEffect?.Invoke(utilityData.consumeSfx);
     }
 
     bool regenerating = false;

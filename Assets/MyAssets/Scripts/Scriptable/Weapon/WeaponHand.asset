@@ -16,6 +16,8 @@ MonoBehaviour:
   weaponId: 0
   ammoType: 1
   weaponIcon: {fileID: 21300000, guid: 51708dee9fde38c438dc27fb81081e4d, type: 3}
+  weaponFireSfx: 4
+  weaponReloadSfx: 8
   ammoAvailable: 1
   ammoCapacity: 0
   isReloadable: 0

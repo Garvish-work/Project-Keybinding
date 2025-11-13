@@ -12,11 +12,12 @@ public class WeaponHand : WeaponBehaviour
 
     public override void Reload()
     {
-        
+
     }
 
     public override void Fire()
     {
         inputData.isPunching = true;
+        ActionHandler.OnRequestSoundEffect(weaponData.weaponFireSfx);
     }
 }

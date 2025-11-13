@@ -15,6 +15,7 @@ MonoBehaviour:
   UtilityName: Heal
   utilityIcon: {fileID: 21300000, guid: 2c1c87a75d8d2774f8c8b04ac1aa6576, type: 3}
   utilityId: 0
+  consumeSfx: 9
   availableCount: 1
   maxCapacity: 5
   regenerationDuration: 10

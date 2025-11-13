@@ -35,7 +35,8 @@ public class UtilityManager : MonoBehaviour
     {
         if (currentUtilityData.availableCount <= 0)
         {
-            ActionHandler.OnNoUtility?.Invoke(); 
+            ActionHandler.OnNoUtility?.Invoke();
+            ActionHandler.OnRequestSoundEffect?.Invoke(SoundEffects.NO_UTILITY);
             return;
         }
 

@@ -34,6 +34,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private void PlayerGotHit(int hitValue)
     {
+        ActionHandler.OnRequestSoundEffect(SoundEffects.GET_PUNCHED);
         SetPlayerHealth(hitValue, "remove");
     }
 

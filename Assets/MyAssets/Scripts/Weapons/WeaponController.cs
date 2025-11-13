@@ -41,6 +41,7 @@ public class WeaponController : MonoBehaviour
     {
         if (currentWeaponData.ammoAvailable <= 0)
         {
+            ActionHandler.OnRequestSoundEffect?.Invoke(SoundEffects.NO_AMMO);
             ActionHandler.OnNoAmmo?.Invoke();
             return;
         }

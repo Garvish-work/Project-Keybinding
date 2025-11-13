@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252b3d15dc0e17a47b781cecb63cc8a9, type: 3}
+  m_Name: Sfx data
+  m_EditorClassIdentifier: Assembly-CSharp::SfxData
+  sfxGroup:
+  - sfxEffects: 0
+    sfxClip: {fileID: 8300000, guid: ce6c2b59c0d384948811e792376edd18, type: 3}
+  - sfxEffects: 1
+    sfxClip: {fileID: 8300000, guid: 1861bc625d6db6a4eb55cd3659d3f3f9, type: 3}
+  - sfxEffects: 2
+    sfxClip: {fileID: 8300000, guid: 787a1e3d1ed13f749a23534351565146, type: 3}
+  - sfxEffects: 3
+    sfxClip: {fileID: 8300000, guid: 432810a40809b2645822066b94288d9e, type: 3}
+  - sfxEffects: 4
+    sfxClip: {fileID: 8300000, guid: cfe6bfb16b5f9c94f8c2c3e8fc45f696, type: 3}
+  - sfxEffects: 5
+    sfxClip: {fileID: 8300000, guid: 7d1a2d51cf4cfa0489cb6950e8cb5e14, type: 3}
+  - sfxEffects: 6
+    sfxClip: {fileID: 8300000, guid: 01051ea6d97a4c54a82ce3b01882146b, type: 3}
+  - sfxEffects: 7
+    sfxClip: {fileID: 8300000, guid: e705a2f3130627e4e885ea1c6b04afe9, type: 3}
+  - sfxEffects: 9
+    sfxClip: {fileID: 8300000, guid: bb055e4e69129684ca000219f1b9f4be, type: 3}
+  - sfxEffects: 10
+    sfxClip: {fileID: 8300000, guid: 0501a6e5cc407fc4fa723e3c0db9d32c, type: 3}
+  - sfxEffects: 11
+    sfxClip: {fileID: 8300000, guid: a721f0bbe4469324a8be63576f678afe, type: 3}
+  - sfxEffects: 12
+    sfxClip: {fileID: 8300000, guid: c412bfd3c43418041affce7bd44acb36, type: 3}

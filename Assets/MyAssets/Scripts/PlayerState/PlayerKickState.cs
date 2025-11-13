@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerKickState : PlayerBaseState
 {
@@ -16,13 +17,16 @@ public class PlayerKickState : PlayerBaseState
 
         playerAnimationSystem.TriggerKick();
         kickDuration = 0;
+
+        ActionHandler.OnRequestSoundEffect(SoundEffects.KICK_WHOOSH);
     }
 
     public override void Update()
     {
         kickDuration += Time.deltaTime;
+        
 
-        if (kickDuration >= inputData.jumpDuration)
+        if (kickDuration >= inputData.kickDuration)
         {
             Exit();
             nextState = new PlayerIdleState(inputData, playerAnimationSystem);

@@ -6,6 +6,7 @@ public class UtilityData : ScriptableObject
     public string UtilityName;
     public Sprite utilityIcon;
     public UtilityID utilityId;
+    public SoundEffects consumeSfx;
 
     [Space]
     public int availableCount;

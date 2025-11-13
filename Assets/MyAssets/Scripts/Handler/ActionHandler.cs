@@ -23,7 +23,7 @@ public static class ActionHandler
     public static Action OnWeaponReloadStart;    
     public static Action OnWeaponReloadCompleted;    
     public static Action<WeaponID> OnWeaponChange;
-    public static Action OnNoAmmo;
+    public static Action OnNoAmmo;  
 
     // player actions
     public static Action<int> OnPlayerGetHit;
@@ -32,5 +32,8 @@ public static class ActionHandler
 
     // ui actions
     public static Action<int> UpdateHealthUi;    
-    public static Action<WeaponData, UiUpdateType> OnUpdateWeaponUi;    
+    public static Action<WeaponData, UiUpdateType> OnUpdateWeaponUi;
+
+    // sfx actions
+    public static Action<SoundEffects> OnRequestSoundEffect;
 }

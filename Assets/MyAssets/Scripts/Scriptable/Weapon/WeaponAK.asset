@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: AK-46
   weaponId: 1
+  ammoType: 0
   weaponIcon: {fileID: 21300000, guid: 9e97b37294825f54199dd63e31b12fc2, type: 3}
+  weaponFireSfx: 5
+  weaponReloadSfx: 7
   ammoAvailable: 30
   ammoCapacity: 30
+  isReloadable: 1

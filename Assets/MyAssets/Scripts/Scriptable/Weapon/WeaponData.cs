@@ -7,6 +7,8 @@ public class WeaponData : ScriptableObject
     public WeaponID weaponId;
     public AmmoType ammoType;
     public Sprite weaponIcon;
+    public SoundEffects weaponFireSfx;
+    public SoundEffects weaponReloadSfx;
 
     [Space]
     public int ammoAvailable;
